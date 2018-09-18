@@ -22,7 +22,7 @@ header {
 .accordion {
   width: 100%;
   display: flex;
-  flex-flow: wrap column;
+  flex-flow: column;
   align-items: center;
   background: #020706;
   border: 2px solid black;
@@ -33,18 +33,6 @@ header {
   box-shadow: 10px 10px 5px grey;
   font-size: 30px;
   transition: 0.4s;
-}
-
-.description {
-  display: none;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease-out;
-}
-
-.description {
-  display: block;
-  color: #8190e0;
 }
 
 .title {
@@ -66,30 +54,6 @@ header {
   direction: ltr;
   -webkit-font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
-  content: "add";
-}
-
-.active::before {
-  content: "remove";
-  color: #8190e0;
-}
-
-
-.active + .description {
-display: block;
-}
-
-#section1 + .active {
-  color: pink;
-  border-bottom: 2px solid pink;
-}
-
-.active + .description + .description2 {
-display: block;
-}
-
-.active + .extra {
-  display: block;
 }
 
 h1 {
@@ -100,4 +64,31 @@ h1 {
 h2 {
   font-size: 35px;
   color: #020706;
+}
+
+.accordion-item {
+
+}
+
+.accordion-item.active {
+
+}
+
+.accordion-item .title::before {
+  content: "+ ";
+}
+
+.accordion-item.active .title::before {
+  content: "- ";
+}
+
+.accordion-item .description {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
+
+.accordion-item.active .description {
+  max-height: 500px;
+  transition: max-height 0.5s ease-out;
 }

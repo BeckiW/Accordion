@@ -1,15 +1,19 @@
 // A function that adds and remove the class "active" on the section you click on.
-function toggle() {
-  this.classList.toggle("active")
+function accordionToggle() {
+  this.classList.toggle("active");
 }
-
 
 // Selects and HTML element, and calls a function which will be executed when the element is clicked.
 
-document.getElementById("section1").onclick = toggle
-document.getElementById("section2").onclick = toggle
-document.getElementById("section3").onclick = toggle
+window.onload = function() {
+  let accordions = document.getElementsByClassName("accordion");
 
-document.getElementById("description1").onclick = toggle
-document.getElementById("description2").onclick = toggle
-document.getElementById("description3").onclick = toggle
+  for(let i = 0; i < accordions.length; i++) {
+    let accordion = accordions[i];
+    let items = accordion.getElementsByClassName("accordion-item");
+
+    for(let j = 0; j < items.length; j++) {
+      items[j].onclick = accordionToggle
+    }
+  }
+};
