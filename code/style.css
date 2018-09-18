@@ -12,17 +12,14 @@ header {
   text-align: center;
   width: 100%;
   min-height: 300px;
-  height: 500px;
+  height: 550px;
   background-position: center;
   overflow: hidden;
   background: url('images/dd1.jpg');
-  opacity: 0.7;
 }
 
 .accordion {
-  width: 100%;
-  display: flex;
-  flex-flow: column;
+  width: 70%;
   align-items: center;
   background: #020706;
   border: 2px solid black;
@@ -30,7 +27,6 @@ header {
   padding: 5%;
   margin-top: 5%;
   margin-bottom: 5%;
-  box-shadow: 10px 10px 5px grey;
   font-size: 30px;
   transition: 0.4s;
 }
@@ -38,10 +34,12 @@ header {
 .title {
   color: #75eac9;
   padding: 2px;
+  background-position: center;
+  text-align: center;
 }
 
 .title::before {
-  font-family: 'Material Icons';
+  font-family: Arial;
   font-weight: normal;
   font-style: normal;
   font-size: 24px;
@@ -52,8 +50,6 @@ header {
   white-space: nowrap;
   word-wrap: normal;
   direction: ltr;
-  -webkit-font-feature-settings: 'liga';
-  -webkit-font-smoothing: antialiased;
 }
 
 h1 {
@@ -64,10 +60,20 @@ h1 {
 h2 {
   font-size: 35px;
   color: #020706;
+  font-weight: bold;
 }
 
-.accordion-item {
 
+.accordion-item {
+    box-sizing: border-box;
+    padding: 0 18px;
+    background-color: black;
+    overflow: hidden;
+
+}
+
+.active, .accordion-item:hover {
+    background-color: black;
 }
 
 .accordion-item.active {
@@ -79,7 +85,7 @@ h2 {
 }
 
 .accordion-item.active .title::before {
-  content: "- ";
+  content: "^ ";
 }
 
 .accordion-item .description {
@@ -91,4 +97,27 @@ h2 {
 .accordion-item.active .description {
   max-height: 500px;
   transition: max-height 0.5s ease-out;
+}
+
+@media (min-width: 600px) and (max-width: 1100px) {
+
+  .banner {
+    text-align: center;
+    width: 100%;
+    min-height: 70px;
+    height: 400px;
+    background-position: center;
+    overflow: hidden;
+    box-shadow: 2px 2px 0px -1px #000000;
+    background: url('images/dd3.jpg');
+  }
+}
+
+@media (max-width: 600px) {
+
+  .banner {
+    background-image: none;
+    height: 140px;
+    background: url('images/dd4.jpg');
+  }
 }
