@@ -1,4 +1,103 @@
 html {
-  background: #f2f1f4;
-  color: #19171c;
+  background: #020706;
+  color: #FFFFFF;
+}
+
+header {
+  padding: 0px;
+  text-align: center;
+}
+
+.banner {
+  text-align: center;
+  width: 100%;
+  min-height: 300px;
+  height: 500px;
+  background-position: center;
+  overflow: hidden;
+  background: url('images/dd1.jpg');
+  opacity: 0.7;
+}
+
+.accordion {
+  width: 100%;
+  display: flex;
+  flex-flow: wrap column;
+  align-items: center;
+  background: #020706;
+  border: 2px solid black;
+  margin: auto;
+  padding: 5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  box-shadow: 10px 10px 5px grey;
+  font-size: 30px;
+  transition: 0.4s;
+}
+
+.description {
+  display: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
+
+.description {
+  display: block;
+  color: #8190e0;
+}
+
+.title {
+  color: #75eac9;
+  padding: 2px;
+}
+
+.title::before {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  content: "add";
+}
+
+.active::before {
+  content: "remove";
+  color: #8190e0;
+}
+
+
+.active + .description {
+display: block;
+}
+
+#section1 + .active {
+  color: pink;
+  border-bottom: 2px solid pink;
+}
+
+.active + .description + .description2 {
+display: block;
+}
+
+.active + .extra {
+  display: block;
+}
+
+h1 {
+  font-size: 90px;
+  color: #75eac9;
+}
+
+h2 {
+  font-size: 35px;
+  color: #020706;
 }
